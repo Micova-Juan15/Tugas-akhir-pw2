@@ -40,7 +40,6 @@ Route::get("/pegawai/edit/{id}", [PegawaiController::class, "edit"])->name("pega
 Route::patch("/pegawai/update/{id}", [PegawaiController::class, "update"])->name("pegawai.update");
 Route::get("/pegawai/delete/{id}", [PegawaiController::class, "destroy"])->name("pegawai.delete");
 
-Use App\Http\Controllers\TransaksiController;
-Route::get("/index", [TransaksiController::class,"index"])->name("cart.index");
-Route::get("/keranjang/tambah/{id}", [TransaksiController::class,"tambah_cart"])->name("cart.beli");
-Route::get("/keranjang", [TransaksiController::class,"cart"])->name("cart.cart");
+Route::group(['prefix' => 'pw2'], function() {
+    Route::get('/', 'DashboardController@index');
+  });

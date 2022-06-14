@@ -20,8 +20,7 @@ class CreateBarangTable extends Migration
             $table->integer('harga');
             $table->timestamps();
         });
-        $count = barang::count();
-        DB::update("ALTER TABLE barang AUTO_INCREMENT = $count;");
+        DB::update("ALTER TABLE barang AUTO_INCREMENT = 5;");
     }
 
     /**
